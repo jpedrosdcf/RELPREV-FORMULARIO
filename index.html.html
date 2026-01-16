@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relato de Prevenção - RELPREV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid red;
+            padding: 15px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            height: 100px;
+        }
+        .small-input {
+            width: calc(50% - 10px);
+            display: inline-block;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RELATO DE PREVENÇÃO - RELPREV</h1>
+        <p>
+            O RELPREV é um reporte voluntário acessível a qualquer pessoa que deseje comunicar um evento, 
+            ocorrência, condição ou circunstância com potencial para afetar a Segurança de Voo/Operacional. 
+            Este reporte não necessita ser identificado, mas, caso o relator se identifique, ele será informado 
+            sobre o tratamento das informações prestadas.
+        </p>
+        <form>
+            <label for="local">Local:</label>
+            <input type="text" id="local" name="local" required>
+            
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" class="small-input">
+            
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora" class="small-input">
+            
+            <label for="envolvido">Pessoal Envolvido e/ou Aeronave:</label>
+            <input type="text" id="envolvido" name="envolvido">
+            
+            <label for="situacao">Situação:</label>
+            <textarea id="situacao" name="situacao" required></textarea>
+            
+            <label for="relator">Relator:</label>
+            <input type="text" id="relator" name="relator">
+            
+            <label for="contato">Informação para Contato:</label>
+            <input type="text" id="contato" name="contato">
+            
+            <button type="submit" class="submit-btn">Enviar Relato</button>
+        </form>
+    </div>
+</body>
+</html>
