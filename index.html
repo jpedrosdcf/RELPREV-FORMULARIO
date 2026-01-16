@@ -9,7 +9,6 @@
             font-family: Arial, sans-serif;
             margin: 20px;
             padding: 20px;
-            color: black;
         }
         h1 {
             text-align: center;
@@ -21,30 +20,35 @@
             margin: 0 auto;
             border: 2px solid red;
             padding: 15px;
-        }
-        img {
-            display: block;
-            margin: 0 auto;
-            width: 100px;
+            box-sizing: border-box;
         }
         label {
             margin-top: 10px;
             font-weight: bold;
+            display: block;
         }
         input, textarea {
-            width: 50%;
+            width: 100%;
             padding: 10px;
             margin: 5px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
         textarea {
             height: 100px;
         }
-        .small-input {
-            width: calc(50% - 10px);
-            display: inline-block;
+
+        /* Estilo para inputs lado a lado */
+        .row {
+            display: flex;
+            gap: 10px;
         }
+        .row .half-width {
+            width: calc(50% - 5px); /* Para manter proporções e espaço entre */
+        }
+
+        /* Botão de envio */
         .submit-btn {
             width: 100%;
             padding: 10px;
@@ -67,24 +71,35 @@
             sobre o tratamento das informações prestadas.
         </p>
         <form>
+            <!-- Local -->
             <label for="local">Local:</label>
-            <input type="text" id="local" name="local" required>
-            
-            <label for="data">Data:</label>
-            <input type="date" id="data" name="data" class="small-input">
-            
-            <label for="hora">Hora:</label>
-            <input type="time" id="hora" name="hora" class="small-input">
-            
+            <input type="text" id="local" name="local" required style="width: 100%;">
+
+            <!-- Data e Hora -->
+            <div class="row">
+                <div class="half-width">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data">
+                </div>
+                <div class="half-width">
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora">
+                </div>
+            </div>
+
+            <!-- Pessoal Envolvido -->
             <label for="envolvido">Pessoal Envolvido e/ou Aeronave:</label>
-            <input type="text" id="envolvido" name="envolvido">
-            
+            <input type="text" id="envolvido" name="envolvido" style="width: 100%;">
+
+            <!-- Situação -->
             <label for="situacao">Situação:</label>
             <textarea id="situacao" name="situacao" required></textarea>
             
+            <!-- Relator -->
             <label for="relator">Relator:</label>
             <input type="text" id="relator" name="relator">
             
+            <!-- Contato -->
             <label for="contato">Informação para Contato:</label>
             <input type="text" id="contato" name="contato">
             
